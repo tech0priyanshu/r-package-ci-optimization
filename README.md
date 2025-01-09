@@ -3,22 +3,22 @@ This repository contains tools and workflows for optimizing Continuous Integrati
 # Project Background
 The project addresses inefficiencies in current CI workflows that involve rebuilding and reinstalling R packages for each job run. By leveraging artifact caching and minimizing package installations, this approach enhances time efficiency and speeds up job runs.
 # Key Features
-Artifact Caching & Retrieval: Utilizes GitHub Actions to store and retrieve precompiled versions of R packages, avoiding redundant compilations.
+- Artifact Caching & Retrieval: Utilizes GitHub Actions to store and retrieve precompiled versions of R packages, avoiding redundant compilations.
 
-Minimized Package Installation: Reduces package size and installation time by excluding non-essential components such as documentation, vignettes, and tests.
+- Minimized Package Installation: Reduces package size and installation time by excluding non-essential components such as documentation, vignettes, and tests.
 
-Integration with GitHub Actions: Automatically checks for cached artifacts and either downloads or builds and caches minified versions as needed.
+- Integration with GitHub Actions: Automatically checks for cached artifacts and either downloads or builds and caches minified versions as needed.
 # Implementation
-## Minimized Package 
-Step 1 Download pacakage data.table_1.16.99.tar.gz from [data.table](https://cran.r-project.org/web/packages/data.table/index.html)
+ ## Minimized Package 
+**Step** 1 Download pacakage data.table_1.16.99.tar.gz from [data.table](https://cran.r-project.org/web/packages/data.table/index.html)
 
-Step 2 Run  
+**Step 2** Run  
 ```sh 
 git clone  https://github.com/tech0priyanshu/r-package-ci-optimization.git
 ```
-Step 3 To maintain the integrity of our CI workflow, it is essential to ensure that both our minified R package and the necessary files are present in the same directory. Additionally, we must ensure that the script has execution permissions.
+**Step** 3 To maintain the integrity of our CI workflow, it is essential to ensure that both our minified R package and the necessary files are present in the same directory. Additionally, we must ensure that the script has execution permissions.
 
-Step 4 Run the Script 
+**Step** 4 Run the Script 
 ```sh
  bash minimize_and_install.sh
 ```
